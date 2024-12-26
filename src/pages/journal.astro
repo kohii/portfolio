@@ -1,0 +1,180 @@
+---
+import JournalItem, {
+	type Props as JournalItemProps,
+} from "../components/JournalItem.astro";
+import ArrowLeftIcon from "../components/icons/ArrowLeftIcon.astro";
+import Layout from "../layouts/Layout.astro";
+
+const items: JournalItemProps[] = [
+	{
+		type: "release",
+		summary: "Redesigned the website",
+		date: "2024-12-28",
+	},
+	{
+		type: "writing",
+		summary: "Published a new article on [zenn.com](https://zenn.dev/)",
+		date: "2024-12-17",
+		url: "https://zenn.dev/kohii/articles/2c1126389d914a",
+	},
+	{
+		type: "writing",
+		summary: "Published a new article on [note.com](https://note.com/)",
+		date: "2024-12-17",
+		url: "https://note.com/kohii/n/n6d5aa698dfa3",
+	},
+	{
+		type: "release",
+		summary: "Redesigned [SmoothCSV Website](https://smoothcsv.com/)",
+		date: "2024-11-27",
+		url: "https://github.com/kohii/smoothcsv-website",
+	},
+	{
+		type: "release",
+		summary:
+			"Released [SmoothCSV 3.0.0-beta.1](https://github.com/kohii/smoothcsv3/releases/tag/v3.0.0-beta.1)",
+		date: "2024-11-13",
+	},
+	{
+		type: "writing",
+		summary:
+			"Published a new article on [zenn.com](https://zenn.dev/) and [dev.to](https://dev.to/)",
+		date: "2024-10-09",
+		url: [
+			"https://zenn.dev/kohii/articles/50e0bf572aac0b",
+			"https://dev.to/kohii/how-to-implement-virtual-scrolling-beyond-the-browsers-limit-16ol",
+		],
+	},
+	{
+		type: "writing",
+		summary: "Published a new article on [zenn.com](https://zenn.dev/)",
+		date: "2024-09-12",
+		url: "https://zenn.dev/kohii/articles/079c73ab14856f",
+	},
+	{
+		type: "release",
+		summary:
+			"Released [SmoothCSV 3.0.0-alpha.1](https://github.com/kohii/smoothcsv3/releases/tag/v0.1.0-ahpha.1)",
+		date: "2024-09-11",
+	},
+	{
+		type: "writing",
+		summary: "Published a new article on [zenn.com](https://zenn.dev/)",
+		date: "2024-07-22",
+		url: "https://zenn.dev/kohii/articles/4a68e768c93573",
+	},
+	{
+		type: "presentation",
+		summary:
+			"Presented at the [Server-side Kotlin Meetup](https://speakerdeck.com/kohii00/kotlinwoyong-itadslde-nashe-ji-shou-fa-toshi-yong-shang-nozhu-yi)",
+		date: "2024-03-08",
+		url: "https://speakerdeck.com/kohii00/kotlinwoyong-itadslde-nashe-ji-shou-fa-toshi-yong-shang-nozhu-yi",
+	},
+	{
+		type: "writing",
+		summary: "Published a new article on [sizu.me](https://sizu.me/)",
+		date: "2023-12-28",
+		url: "https://sizu.me/kohii/posts/mh0ddk72vk9t",
+	},
+	{
+		type: "writing",
+		summary: "Published a new article on [zenn.com](https://zenn.dev/)",
+		date: "2023-12-22",
+		url: "https://zenn.dev/kohii/articles/13fbf3d0dc2170",
+	},
+	{
+		type: "release",
+		summary: "Released [MediXplorer](https://medi-xplorer.com/)",
+		date: "2023-12-02",
+		url: "https://medi-xplorer.com/",
+	},
+	{
+		type: "presentation",
+		summary:
+			"Presented at [モノレポへの移行 LT -生産性の高いアーキテクチャに向けた第一歩-](https://findy.connpass.com/event/296339/)",
+		date: "2023-10-06",
+		url: "https://speakerdeck.com/kohii00/monorehohua-sositesonoxian-he-henrinore-architectingzhan-lue",
+	},
+	{
+		type: "writing",
+		summary: "Published a new article on [note.com](https://note.com/)",
+		date: "2023-06-20",
+		url: "https://note.com/kohii/n/n92ec3241df68",
+	},
+	{
+		type: "writing",
+		summary: "Published a new article on [dev.henry.jp](https://dev.henry.jp/)",
+		date: "2023-05-15",
+		url: "https://dev.henry.jp/entry/backend-monorepo-part-1",
+	},
+	{
+		type: "presentation",
+		summary:
+			"Presented at [Webサービス開発者の会](https://sakura-tokyo.connpass.com/event/282349/)",
+		date: "2024-05-11",
+		url: "https://speakerdeck.com/kohii00/ge-ren-kai-fa-sabisu-moyuk-wo-product-huntderontisurumadenodao-nori",
+	},
+	{
+		type: "release",
+		summary:
+			"Launched [Moyuk](https://moyukapp.com/) on [Product Hunt](https://www.producthunt.com/)",
+		date: "2023-04-10",
+		url: "https://www.producthunt.com/products/moyuk#moyuk-beta",
+	},
+	{
+		type: "writing",
+		summary: "Published a new article on [zenn.com](https://zenn.dev/)",
+		date: "2023-04-10",
+		url: "https://zenn.dev/kohii/articles/6481587ffbfa4d",
+	},
+	{
+		type: "writing",
+		summary: "Published a new article on [zenn.com](https://zenn.dev/)",
+		date: "2022-08-23",
+		url: "https://zenn.dev/kohii/articles/e4f325ed011db8",
+	},
+	{
+		type: "writing",
+		summary: "Published a new article on [zenn.com](https://zenn.dev/)",
+		date: "2021-11-11",
+		url: "https://zenn.dev/kohii/articles/b96634b9a14897",
+	},
+	{
+		type: "career",
+		summary: "Joined [Henry, Inc.](https://henry.jp/)",
+		date: "2021-08-01",
+	},
+	{
+		type: "career",
+		summary: "Joined [Valus, Inc.](https://valus.co.jp/)",
+		date: "2015-11-01",
+	},
+	{
+		type: "career",
+		summary: "Joined [TIS Inc.](https://www.tis.co.jp/)",
+		date: "2009-04-01",
+	},
+];
+---
+
+<Layout>
+	<div class="min-h-screen bg-zinc-900 text-zinc-100">
+		<main class="max-w-2xl mx-auto px-4 py-16 sm:py-20">
+			<header class="mb-8">
+				<a
+					href="/"
+					class="inline-flex items-center text-blue-400 hover:underline mb-4"
+				>
+					<ArrowLeftIcon class="mr-2 size-5" />
+					Back to Home
+				</a>
+				<h1 class="text-4xl font-bold mb-2">Journal</h1>
+				<p class="text-lg text-zinc-400">Recent updates, writings, and more</p>
+			</header>
+
+			<ul class="space-y-4">
+				{items.map((item, index) => <JournalItem {...item} />)}
+			</ul>
+		</main>
+	</div>
+</Layout>

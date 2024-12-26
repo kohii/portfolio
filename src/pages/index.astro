@@ -1,11 +1,118 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import { Image } from "astro:assets";
+import SocialLink from "../components/SocialLink.astro";
+import WorkItem from "../components/WorkItem.astro";
+import MailIcon from "../components/icons/MailIcon.astro";
+import Layout from "../layouts/Layout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import mediXplorerImage from "../assets/medi-xplorer.png";
+import moyukImage from "../assets/moyuk.png";
+import profileImage from "../assets/profile.jpg";
+import smoothCSVImage from "../assets/smoothcsv.png";
+import DribbbleIcon from "../components/icons/DribbbleIcon.astro";
+import ExternalLinkIcon from "../components/icons/ExternalLinkIcon.astro";
+import GitHubIcon from "../components/icons/GitHubIcon.astro";
+import ProductHuntIcon from "../components/icons/ProductHuntIcon.astro";
+import XIcon from "../components/icons/XIcon.astro";
 ---
 
 <Layout>
-	<Welcome />
+	<div class="min-h-screen bg-zinc-900 text-zinc-100">
+		<main class="max-w-2xl mx-auto px-4 py-16 sm:py-20">
+			<header class="mb-12 flex flex-col items-center text-center">
+				<div class="mb-6 relative w-32 h-32">
+					<Image
+						src={profileImage}
+						alt="Kohii's profile"
+						class="rounded-full object-cover"
+						priority
+					/>
+				</div>
+				<h1 class="text-4xl font-bold mb-2">kohii</h1>
+				<p class="text-lg text-zinc-400">
+					Software Developer, Architect, Designer and Indie Hacker
+				</p>
+				<a href="/journal" class="mt-4 text-blue-400 hover:underline">
+					View Journal
+				</a>
+			</header>
+
+			<section class="mb-12">
+				<h2 class="text-2xl font-semibold mb-4">About me</h2>
+				<p class="text-zinc-300">
+					Based in Japan, designing and developing useful tools and
+					applications.
+				</p>
+			</section>
+
+			<section class="mb-12">
+				<h2 class="text-2xl font-semibold mb-4">Works</h2>
+				<ul class="space-y-6">
+					<WorkItem
+						title="SmoothCSV"
+						description="An ultimate CSV editor for macOS and Windows"
+						href="https://smoothcsv.com/"
+						imageSrc={smoothCSVImage}
+					/>
+					<WorkItem
+						title="MediXplorer"
+						description="An online viewer for Japanese Medical Procedures Master"
+						href="https://medi-xplorer.com/"
+						imageSrc={mediXplorerImage}
+					/>
+					<WorkItem
+						title="Moyuk"
+						description="A platform for building and sharing custom tools online"
+						href="https://moyukapp.com/"
+						imageSrc={moyukImage}
+					/>
+				</ul>
+			</section>
+
+			<section class="mb-12">
+				<h2 class="text-2xl font-semibold mb-4">Links</h2>
+				<div class="grid grid-cols-2 sm:grid-cols-3 gap-4 -mx-2">
+					<SocialLink href="https://github.com/kohii">
+						<GitHubIcon class="size-4" />
+						<span>GitHub</span>
+					</SocialLink>
+					<SocialLink href="https://x.com/kohii00">
+						<XIcon class="size-4" />
+						<span>X</span>
+					</SocialLink>
+					<SocialLink href="https://zenn.dev/kohii">
+						<ExternalLinkIcon class="size-5" />
+						<span>Zenn</span>
+					</SocialLink>
+					<SocialLink href="https://note.com/kohii">
+						<ExternalLinkIcon class="size-5" />
+						<span>note</span>
+					</SocialLink>
+					<SocialLink href="https://www.producthunt.com/@kohii">
+						<ProductHuntIcon class="size-4" />
+						<span>Product Hunt</span>
+					</SocialLink>
+					<SocialLink href="https://dribbble.com/kohii">
+						<DribbbleIcon class="size-4" />
+						<span>Dribbble</span>
+					</SocialLink>
+					<SocialLink href="https://www.wantedly.com/id/kohii">
+						<ExternalLinkIcon class="size-5" />
+						<span>Wantedly</span>
+					</SocialLink>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="text-2xl font-semibold mb-4">Contact</h2>
+				<a
+					href="mailto:kohii.tokyo@gmail.com"
+					class="inline-flex items-center text-blue-400 hover:underline"
+				>
+					<MailIcon class="mr-2 size-5" />
+					kohii.tokyo@gmail.com
+				</a>
+			</section>
+		</main>
+	</div>
 </Layout>

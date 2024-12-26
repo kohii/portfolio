@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import ExternalLinkIcon from "./icons/ExternalLinkIcon.astro";
+
+export type Props = {
+	href: string;
+	imageSrc: ImageMetadata;
+	title: string;
+	description: string;
+};
+
+const { href, imageSrc, title, description } = Astro.props;
+---
+
+<li class="group">
+	<a
+		href={href}
+		class="block p-4 -mx-4 rounded-lg hover:bg-zinc-800 transition-colors duration-200"
+		target="_blank"
+		rel="noopener noreferrer"
+	>
+		<div class="flex flex-col sm:flex-row sm:items-center">
+			<div
+				class="relative w-full sm:w-40 mb-4 sm:mb-0 sm:mr-4 overflow-hidden rounded-lg flex-shrink-0"
+			>
+				<Image
+					src={imageSrc}
+					alt={`Screenshot of ${title}`}
+					class="object-cover transition-transform duration-200 group-hover:scale-105"
+				/>
+			</div>
+			<div class="flex-grow">
+				<div class="flex items-center justify-between">
+					<h3 class="font-medium text-zinc-100">{title}</h3>
+					<ExternalLinkIcon
+						class="text-zinc-500 group-hover:text-zinc-300 size-5"
+					/>
+				</div>
+				<p class="mt-1 text-zinc-400">{description}</p>
+			</div>
+		</div>
+	</a>
+</li>
