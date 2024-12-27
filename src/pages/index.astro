@@ -7,7 +7,7 @@ import Layout from "../layouts/Layout.astro";
 
 import mediXplorerImage from "../assets/medi-xplorer.png";
 import moyukImage from "../assets/moyuk.png";
-import profileImage from "../assets/profile.jpg";
+import profileImage from "../assets/profile.png";
 import smoothCSVImage from "../assets/smoothcsv.png";
 import DribbbleIcon from "../components/icons/DribbbleIcon.astro";
 import ExternalLinkIcon from "../components/icons/ExternalLinkIcon.astro";
@@ -20,14 +20,14 @@ import XIcon from "../components/icons/XIcon.astro";
 	<div class="min-h-screen bg-zinc-900 text-zinc-100">
 		<main class="max-w-2xl mx-auto px-4 py-16 sm:py-20">
 			<header class="mb-12 flex flex-col items-center text-center">
-				<div class="mb-6 relative w-32 h-32">
-					<Image
-						src={profileImage}
-						alt="Kohii's profile"
-						class="rounded-full object-cover"
-						priority
-					/>
-				</div>
+				<Image
+					src={profileImage}
+					alt="Kohii's profile"
+					class="rounded-full object-cover mb-6 relative"
+					width={128}
+					height={128}
+					priority
+				/>
 				<h1 class="text-4xl font-bold mb-2">kohii</h1>
 				<p class="text-lg text-zinc-400">
 					Software Developer, Architect, Designer and Indie Hacker
