@@ -1,15 +1,43 @@
 ---
 import "../style.css";
+
+type Props = {
+	title?: string;
+	description?: string;
+};
+
+const props: Props = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const socialImageURL = new URL("/images/og.png", Astro.url);
+const title = props.title ? `${props.title} | kohii` : "kohii";
+const description = props.description || "kohii's portfolio";
 ---
 
 <!doctype html>
-<html lang="en">
+<html>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>kohii</title>
+
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="canonical" content={canonicalURL} />
+		<meta name="author" content="kohii" />
+		<meta name="keywords" content="kohii, portfolio, web development, design" />
+		<meta name="robots" content="index, follow" />
+		<meta name="theme-color" content="rgb(24, 24, 27)" />
+
+		<meta name="twitter:card" content="summary" />
+		<meta property="og:image" content={socialImageURL} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:site_name" content="kohii" />
+
 		<link
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css"
