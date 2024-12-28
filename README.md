@@ -1,9 +1,3 @@
-# kohii
+# kohii/portfolio
 
-kohii's personal website
-
-## Development
-
-```bash
-pnpm dev
-```
+https://kohii.dev/
