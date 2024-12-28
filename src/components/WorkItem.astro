@@ -27,7 +27,8 @@ const { href, imageSrc, title, description } = Astro.props;
 				<Image
 					src={imageSrc}
 					alt={`Screenshot of ${title}`}
-					class="object-cover transition-transform duration-200 group-hover:scale-105"
+					width={480}
+					class="object-cover transition-transform duration-200 group-hover:scale-105 w-full"
 				/>
 			</div>
 			<div class="flex-grow">
