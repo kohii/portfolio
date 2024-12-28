@@ -173,23 +173,21 @@ const items: JournalItemProps[] = [
 ---
 
 <Layout>
-	<div class="min-h-screen bg-zinc-900 text-zinc-100">
-		<main class="max-w-2xl mx-auto px-4 py-16 sm:py-20">
-			<header class="mb-8">
-				<a
-					href="/"
-					class="inline-flex items-center text-blue-400 hover:underline mb-4"
-				>
-					<ArrowLeftIcon class="mr-2 size-5" />
-					Back to Home
-				</a>
-				<h1 class="text-4xl font-bold mb-2">Journal</h1>
-				<p class="text-lg text-zinc-400">Recent updates, writings, and more</p>
-			</header>
+	<main class="max-w-2xl mx-auto px-4 py-16 sm:py-20">
+		<header class="mb-8">
+			<a
+				href="/"
+				class="inline-flex items-center text-blue-400 hover:underline mb-4"
+			>
+				<ArrowLeftIcon class="mr-2 size-5" />
+				Back to Home
+			</a>
+			<h1 class="text-4xl font-bold mb-2">Journal</h1>
+			<p class="text-lg text-zinc-400">Recent updates, writings, and more</p>
+		</header>
 
-			<ul class="space-y-4">
-				{items.map((item, index) => <JournalItem {...item} />)}
-			</ul>
-		</main>
-	</div>
+		<ul class="space-y-4">
+			{items.map((item, index) => <JournalItem {...item} />)}
+		</ul>
+	</main>
 </Layout>
