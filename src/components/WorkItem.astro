@@ -22,7 +22,7 @@ const { href, imageSrc, title, description } = Astro.props;
 	>
 		<div class="flex flex-col sm:flex-row sm:items-center">
 			<div
-				class="relative w-full sm:w-40 mb-4 sm:mb-0 sm:mr-4 overflow-hidden rounded-lg flex-shrink-0"
+				class="relative w-full sm:w-40 mb-4 sm:mb-0 sm:mr-4 overflow-hidden rounded-lg shrink-0"
 			>
 				<Image
 					src={imageSrc}
@@ -31,7 +31,7 @@ const { href, imageSrc, title, description } = Astro.props;
 					class="object-cover transition-transform duration-200 group-hover:scale-105 w-full"
 				/>
 			</div>
-			<div class="flex-grow">
+			<div class="grow">
 				<div class="flex items-center justify-between">
 					<h3 class="font-medium text-zinc-100">{title}</h3>
 					<ExternalLinkIcon
